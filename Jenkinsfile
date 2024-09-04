@@ -9,7 +9,7 @@ pipeline {
         ECR = '756266714368.dkr.ecr.ap-northeast-2.amazonaws.com/wild'
         AWSCREDENTIAL = 'aws_cre'
         environment {
-            WILD_TOKEN = credentials('WILD_token')
+            WILD_TOKEN = credentials('WILD_TOKEN')
         }
     }
     stages {
