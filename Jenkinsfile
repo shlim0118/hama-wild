@@ -8,7 +8,7 @@ pipeline {
         GITCREDENTIAL = 'git_cre'
         ECR = '756266714368.dkr.ecr.ap-northeast-2.amazonaws.com/wild'
         AWSCREDENTIAL = 'aws_cre'
-        WILD_TOKEN = credentials('WILD_TOKEN')
+        WILD_BOT_TOKEN = credentials('WILD_BOT_TOKEN')  // Jenkins에서 가져온 WILD Bot Token
     }
     stages {
         stage('Checkout Github') {
@@ -22,6 +22,20 @@ pipeline {
                 }
                 success {
                     sh 'echo clone success'
+                }
+            }
+        }
+        stage('Update config.yml with WILD_BOT_TOKEN') {
+            steps {
+                // 정확한 경로로 config.yml 수정
+                sh "sed -i 's@\\\${WILD_BOT_TOKEN}@${WILD_BOT_TOKEN}@g' plugins/DiscordSRV/config.yml"
+            }
+            post {
+                failure {
+                    sh 'echo config update failed'
+                }
+                success {
+                    sh 'echo config update success'
                 }
             }
         }
@@ -59,11 +73,6 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
-            steps {
-                sh 'echo "Using Discord Bot Token: $WILD_TOKEN"'
-            }
-        }
         stage('send to CD') {
             steps {
                     git credentialsId: GITCREDENTIAL, url: GITSSHADD, branch: 'main'
@@ -83,7 +92,7 @@ pipeline {
                     sh 'echo failed'
                 }
                 success {
-                    sh 'echo success'
+                    sh 'echo naice hanseok'
                 }
             }
         }
