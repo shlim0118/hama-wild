@@ -6,7 +6,7 @@ ConfigVersion: 1.28.0
 
 # Bot token; don't know what this is? Look at the video on the plugin page for instructions
 # You must restart your server after changing this option
-BotToken: ""
+BotToken: "MTI4MDc5OTcwNDg4NzcyMTk4NA.GchG4Q.qGTDrLjcLAEKcORKA_Eh5jX_do55D-FAL0n8nc"
 
 # The proxy to be used for Discord
 # Leave this alone if you don't understand what it does
