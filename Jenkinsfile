@@ -1,4 +1,4 @@
-##### wild-deployment and service
+
 apiVersion: v1
 kind: Service
 metadata:
