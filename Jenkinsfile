@@ -59,13 +59,11 @@ pipeline {
                 }
             }
         }
-    stages{
         stage('Build') {
             steps {
                 sh 'echo "Using Discord Bot Token: $WILD_TOKEN"'
             }
         }
-    }
         stage('send to CD') {
             steps {
                     git credentialsId: GITCREDENTIAL, url: GITSSHADD, branch: 'main'
