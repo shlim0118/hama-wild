@@ -8,6 +8,9 @@ pipeline {
         GITCREDENTIAL = 'git_cre'
         ECR = '756266714368.dkr.ecr.ap-northeast-2.amazonaws.com/wild'
         AWSCREDENTIAL = 'aws_cre'
+        environment {
+            WILD_TOKEN = credentials('WILD_token')
+        }
     }
     stages {
         stage('Checkout Github') {
@@ -55,6 +58,13 @@ pipeline {
                     sh "docker image rm -f  ${ECR}:${currentBuild.number}"
                     sh "docker image rm -f  ${ECR}:latest"
                     sh 'echo push success'
+                }
+            }
+        }
+        stages{
+            stage('Build') {
+                steps {
+                    sh 'echo "Using Discord Bot Token: $WILD_TOKEN"'
                 }
             }
         }
