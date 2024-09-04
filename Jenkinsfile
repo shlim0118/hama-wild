@@ -4,7 +4,7 @@ pipeline {
         GITNAME = 'shlim0118'
         GITMAIL = 'tim02366@naver.com'
         GITWEBADD = 'https://github.com/shlim0118/hama-wild.git'
-        GITSSHADD = 'git@github.com:shlim0118/wild-deployment.git'
+        GITSSHADD = 'git@github.com:shlim0118/wild-deploy.git'
         GITCREDENTIAL = 'git_cre'
         ECR = '756266714368.dkr.ecr.ap-northeast-2.amazonaws.com/wild'
         AWSCREDENTIAL = 'aws_cre'
