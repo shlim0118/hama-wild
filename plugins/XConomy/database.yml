@@ -40,7 +40,7 @@ Pool-Settings:
 
 #Redis settings
 Redis:
-  host: hama-redis-ro.797txa.ng.0001.apn2.cache.amazonaws.com:6379
+  host: hama-redis-ro.797txa.ng.0001.apn2.cache.amazonaws.com
   port: 6379
   db-index: 1
   duration: 1000
