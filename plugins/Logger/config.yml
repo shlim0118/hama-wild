@@ -16,7 +16,7 @@ Language: en_en
 Server-Name: Server_Name
 Plugin-Prefix: '&bLogger &8&l|&r '
 Time-Formatter: yyyy-MM-dd HH:mm:ss
-File-Deletion: 1
+File-Deletion: 3
 Log-to-Files: true
 Staff:
   Enabled: false
@@ -119,8 +119,8 @@ Database:
   Port: 3306
   Username: admin
   Password: test1234
-  Database: 
-  Data-Deletion: 1
+  Database: wild_log
+  Data-Deletion: 3
 SQLite:
   Enable: false
   Data-Deletion: 7
